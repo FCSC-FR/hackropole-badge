@@ -10,6 +10,11 @@ WLED is free software under the European Union Public License 1.2.
 
 ## Flash firmware
 
+To flash the firmware, you need to have esptool installed.
+If your package distribution does not ship esptool, you may follow the official
+instructions to install it via pip:
+<https://docs.espressif.com/projects/esptool/en/release-v4/esp32/installation.html>
+
 Connect ESP32-S3 USB while pressing the boot button (marked "B") to enter the bootloader mode.
 Make sure you user can write to '/dev/ttyACM0'. Then:
 ```bash
