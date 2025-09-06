@@ -10,7 +10,8 @@ WLED is free software under the European Union Public License 1.2.
 
 ## Flash firmware
 
-Connect ESP32-S3 USB and make sure you user can write to '/dev/ttyACM0'. Then:
+Connect ESP32-S3 USB while pressing the boot button (marked "B") to enter the bootloader mode.
+Make sure you user can write to '/dev/ttyACM0'. Then:
 ```bash
 esptool.py --port /dev/ttyACM0 erase_flash
 esptool.py --port /dev/ttyACM0 write_flash 0x0 bootloader.bin
@@ -37,16 +38,26 @@ After successfully flashing the firmware, you should see a new Wi-Fi network `WL
 You may connect to this network using the following password: `wled1234`, then you should see a web page "Welcome to WLED!".
 You may press "WIFI SETTINGS" to configure now the badge as a Wi-Fi client.
 
-## LED configuration
+## LED and buttons configuration
 
 The Hackropole badge has:
   - 8 WS2812B LED on GPIO 2
   - 1 WS2812B LED on GPIO 21
-  - 9 capacitive touch buttons on GPIO 1, 3, 4, 5, 6, 7, 8, 9, 10
-  - 2 extra exposed GPIO for user modding
+  - 8 capacitive touch buttons on GPIO 1, 3, 4, 5, 7, 8, 9, 10 (each pillar), and one on GPIO 6 (rooster's crest)
+  - GPIO 14 and 15 exposed on pads for user modding (e.g. for 3.3V I2C sensors, I2S microphone)
 
 To configure the LED, you should go to `Config > LED Preferences` (or `http://DEVICE_IP/settings/leds`), then in "Hardware setup / LED outputs" configure:
   - Set `Length: 8`, `Data GPIO: 2`
   - Press '+' and set `Length: 1`, `Data GPIO: 21`
 
 ![WLED LED Preferences](./wled_led_settings.png)
+
+To configure the buttons, go to the same page (still in `LED Preferences`), and configure:
+  - Button 0 GPIO: 6 Touch
+  - Button 1 GPIO: 1 Touch
+  - Button 2 GPIO: 4 Touch
+  - Button 3 GPIO: 7 Touch
+
+By default button 0 should toggle the light, and button 1 should cycle effects.
+
+Due to a limitation in WLED firmare, only 4 touch buttons can be configured at once. However the hardware should be able to handle all 9 buttons.
