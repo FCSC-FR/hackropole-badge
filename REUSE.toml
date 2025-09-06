@@ -29,3 +29,8 @@ SPDX-License-Identifier = "CC-BY-4.0"
 path = "hardware/sym-lib-table"
 SPDX-FileCopyrightText = "2025 Hackropole"
 SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = "hardware/*.jpg"
+SPDX-FileCopyrightText = "2025 Hackropole"
+SPDX-License-Identifier = "CC-BY-4.0"

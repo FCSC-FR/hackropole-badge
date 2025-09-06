@@ -5,6 +5,8 @@ SPDX-FileCopyrightText: 2025 Hackropole
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
+![Badge](./pcb_flat.jpg)
+
 This PCB was designed with a Kicad 9.0.
 
 ## Sending the PCB to production
