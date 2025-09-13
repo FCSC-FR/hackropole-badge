@@ -55,7 +55,7 @@ souder les composants.
 N'utilisez pas d'eau pour le nettoyage, car elle pourrait être corrosive.
 Préférez l'**alcool isopropylique**.
 
-> [!AVERTISSEMENT]
+> [!WARNING]
 > Les fumées de soudure contiennent un nombre élevé de particules.
 > Vous devez toujours souder avec un extracteur de fumées en marche,
 ou au moins dans un endroit très ventilé.
