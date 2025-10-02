@@ -30,19 +30,7 @@ esptool.py --port /dev/ttyACM0 write_flash 0x10000 firmware.bin
 
 Réinitialisez ensuite la carte (par exemple en la débranchant).
 
-## Compiler le micrologiciel à partir des sources
-
-Si vous ne faites pas confiance à nos binaires pré-compilés, vous pouvez les
-télécharger et les recompiler à partir du code source :
-
-```bash
-git clone https://github.com/wled/WLED
-# checkout 28 Jun 2025 version, this matchs distributed pre-built binaries
-git checkout cc81cc27b033b8358b4acc1f4155d51f31b83f5d
-pio run -e esp32s3_4M_qspi -t upload
-```
-
-## Configuration initiale
+## Configuration Wi-Fi initiale
 
 Une fois le micrologiciel flashé, vous devriez voir apparaître un nouveau réseau
 Wi-Fi nommé "WLED-AP".
@@ -52,7 +40,33 @@ Vous devriez alors voir apparaître une page Web intitulée "Welcome to WLED!".
 Vous pouvez appuyer sur "WIFI SETTINGS" pour configurer le badge en tant que
 client Wi-Fi.
 
-## Configuration des LED et des boutons
+Par défaut, le bouton 0 (la crête du coq) devrait activer/désactiver la lumière
+et le bouton 1 devrait changer l'effet actif (1ère colonne).
+
+## Compiler le micrologiciel à partir des sources
+
+Si vous ne faites pas confiance à nos binaires pré-compilés, vous pouvez les
+télécharger et les recompiler à partir du code source :
+
+```bash
+git clone https://github.com/wled/WLED
+# Checkout v0.15.1, cette version correspond aux binaires distribués
+git checkout v0.15.1
+# copiez `platformio_override.ini` to WLED repository
+# ce fichier configure un target custom avec nos paramètres par défaut
+cp ../hackropole-badge/firmware-wled/platformio_override.ini ./platformio_override.ini
+# Compilez!
+pio run -e WLED_hackropole -t upload
+```
+
+Le micrologiciel est pré-configuré de sorte que toutes les LEDs soient jaunes
+par défaut. Si ce n'est pas le cas, vérifiez vos soudures.
+
+## Configuration manuelle
+
+Si vous n'utilisez pas le micrologiciel pré-configuré, ou souhaitez comprendre
+comment configurer manuellement WLED pour rajouter des usermods, vous pouvez
+suivre ces instructions.
 
 Le badge Hackropole dispose de :
 
@@ -67,8 +81,8 @@ Pour configurer la LED, rendez-vous dans `Config > LED Preferences`
 (ou `http://DEVICE_IP/settings/leds`), puis dans "Hardware setup / LED outputs"
 et configurez :
 
-- Définissez `Length : 8`, `Data GPIO : 2`
-- Appuyez sur '+' et définissez `Length : 1`, `Data GPIO : 21`
+- L'output 1 devrait être `Length : 8`, `Data GPIO : 2`
+- L'output 2 devrait être  `Length : 1`, `Data GPIO : 21`
 
 ![Préférences LED WLED](./wled_led_settings.png)
 
@@ -79,10 +93,3 @@ Pour configurer les boutons, allez sur la même page (toujours dans
 - Bouton 1 GPIO : 1 Touch (la 1ère colonne)
 - Bouton 2 GPIO : 4 Touch (la 2ème colonne)
 - Bouton 3 GPIO : 7 Touch (la 3ème colonne)
-
-Par défaut, le bouton 0 (la crête du coq) devrait activer/désactiver la lumière
-et le bouton 1 devrait changer l'effet actif (1ère colonne).
-
-En raison d'une limitation du micrologiciel WLED, seuls 4 boutons tactiles
-peuvent être configurés à la fois. Cependant, le matériel devrait pouvoir gérer
-les 9 boutons.
