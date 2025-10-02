@@ -53,7 +53,7 @@ You may press "WIFI SETTINGS" to configure now the badge as a Wi-Fi client.
 The Hackropole badge has:
 
 - 8 WS2812B LED on GPIO 2
-- 1 WS2812B LED on GPIO 21
+- 1 WS2812B LED on GPIO 21 (built-in on ESP32S3 board)
 - 8 capacitive touch buttons on GPIO 1, 3, 4, 5, 7, 8, 9, 10 (each pillar),
   and one on GPIO 6 (rooster's crest)
 - GPIO 14 and 15 exposed on pads for user modding (e.g. for 3.3V I2C sensors,
@@ -69,12 +69,13 @@ To configure the LED, you should go to `Config > LED Preferences`
 
 To configure the buttons, go to the same page (still in `LED Preferences`), and configure:
 
-- Button 0 GPIO: 6 Touch
-- Button 1 GPIO: 1 Touch
-- Button 2 GPIO: 4 Touch
-- Button 3 GPIO: 7 Touch
+- Button 0 GPIO: 6 Touch (rooster's crest)
+- Button 1 GPIO: 1 Touch (1rst pillar)
+- Button 2 GPIO: 4 Touch (2nd pillar)
+- Button 3 GPIO: 7 Touch (3rd pillar)
 
-By default button 0 should toggle the light, and button 1 should cycle effects.
+By default button 0 (rooster's crest) should toggle the light, and button 1
+(1rst pillar) should cycle effects.
 
 Due to a limitation in WLED firmare, only 4 touch buttons can be configured
 at once.

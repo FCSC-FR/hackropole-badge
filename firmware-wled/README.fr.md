@@ -57,7 +57,7 @@ client Wi-Fi.
 Le badge Hackropole dispose de :
 
 - 8 LED WS2812B sur GPIO 2
-- 1 LED WS2812B sur GPIO 21
+- 1 LED WS2812B sur GPIO 21 (intégrée sur la carte ESP32-S3)
 - 8 boutons capacitifs sur les GPIO 1, 3, 4, 5, 7, 8, 9, 10 (chaque pilier) et
   un sur le GPIO 6 (crête du coq)
 - GPIO 14 et 15 exposés sur des pads pour les usermods (par exemple pour des
@@ -75,13 +75,13 @@ et configurez :
 Pour configurer les boutons, allez sur la même page (toujours dans
 `LED Preferences`) et configurez :
 
-- Bouton 0 GPIO : 6 Touch
-- Bouton 1 GPIO : 1 Touch
-- Bouton 2 GPIO : 4 Touch
-- Bouton 3 GPIO : 7 Touch
+- Bouton 0 GPIO : 6 Touch (la crête)
+- Bouton 1 GPIO : 1 Touch (la 1ère colonne)
+- Bouton 2 GPIO : 4 Touch (la 2ème colonne)
+- Bouton 3 GPIO : 7 Touch (la 3ème colonne)
 
-Par défaut, le bouton 0 devrait activer/désactiver la lumière et le bouton 1
-devrait changer l'effet actif.
+Par défaut, le bouton 0 (la crête du coq) devrait activer/désactiver la lumière
+et le bouton 1 devrait changer l'effet actif (1ère colonne).
 
 En raison d'une limitation du micrologiciel WLED, seuls 4 boutons tactiles
 peuvent être configurés à la fois. Cependant, le matériel devrait pouvoir gérer
