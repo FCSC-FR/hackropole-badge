@@ -42,6 +42,7 @@ votre créativité :
 - Une batterie externe USB pour rendre le badge autonome.
 - 2x entretoises en nylon M2 6mm (écrou, boulon et pilier hexagonal) pour
   construire une boîte-lampe avec 2 badges.
+- Un stand fabriqué en impression 3D ([fichier source](./stand.scad), [fichier STL](./stand.stl)).
 - Quelques capteurs compatibles Qwiic et un câble Qwiic à souder sur les pads
   GP14/GP15/3V3/GND. Qui a dit que votre badge ne devrait pas mesurer la
   lumière ambiante ? :D

@@ -6,6 +6,16 @@ SPDX-FileCopyrightText = "2025 Hackropole"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
+path = "assembly/*.webm"
+SPDX-FileCopyrightText = "2025 Hackropole"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = "assembly/*.stl"
+SPDX-FileCopyrightText = "2025 Hackropole"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
 path = "firmware-wled/*.bin"
 SPDX-FileCopyrightText = "2016-present Christian Schwinne and individual WLED contributors"
 SPDX-License-Identifier = "EUPL-1.2"

@@ -38,6 +38,7 @@ recommend getting the following to have a baseline to build upon:
 - A USB PowerBank to keep the badge powered even far away from a power outlet.
 - 2x M2 6mm nylon standoff (nut, bolt and hex pillar), to build a box lamp with
   2 badges.
+- A 3D-printed stand ([source code](./stand.scad), [STL model](./stand.stl)).
 - Some Qwiic-compatible sensors, and a Qwiic cable to solder on GP14/GP15/3V3/GND
   pads. Who said that your badge shouldn't have an ambient light sensor? :D
 
