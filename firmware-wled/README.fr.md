@@ -30,10 +30,13 @@ esptool.py --port /dev/ttyACM0 write_flash 0x10000 firmware.bin
 
 Réinitialisez ensuite la carte (par exemple en la débranchant).
 
+Notez les 6 derniers chiffres hexadécimaux de l'adresse MAC (affichée par esptool),
+celle valeur correspondera partiellement au SSID du Wi-Fi.
+
 ## Configuration Wi-Fi initiale
 
 Une fois le micrologiciel flashé, vous devriez voir apparaître un nouveau réseau
-Wi-Fi nommé "WLED-AP".
+Wi-Fi nommé `WLED-abcdef` avec `abcdef` correspondant à la fin de l'adresse MAC.
 Vous pouvez vous connecter à ce réseau à l'aide du mot de passe suivant :
 "wled1234".
 Vous devriez alors voir apparaître une page Web intitulée "Welcome to WLED!".
@@ -50,12 +53,12 @@ télécharger et les recompiler à partir du code source :
 
 ```bash
 git clone https://github.com/wled/WLED
-# Checkout v0.15.1, cette version correspond aux binaires distribués
-git checkout v0.15.1
-# copiez `platformio_override.ini` to WLED repository
-# ce fichier configure un target custom avec nos paramètres par défaut
+# Checkout v0.15.5, cette version correspond aux binaires distribués
+git checkout v0.15.5
+# Copiez `platformio_override.ini` vers le dépôt WLED
+# ce fichier configure une cible personnalisée avec nos paramètres par défaut
 cp ../hackropole-badge/firmware-wled/platformio_override.ini ./platformio_override.ini
-# Compilez!
+# Compilez !
 pio run -e WLED_hackropole -t upload
 ```
 

@@ -29,9 +29,11 @@ esptool.py --port /dev/ttyACM0 write_flash 0x10000 firmware.bin
 
 Then reset the board (e.g. by unplugging it).
 
+Note down the last 6 hexdigit of the MAC address (printed by esptool) as they will match the Wi-Fi SSID.
+
 ## Initial Wi-Fi setup
 
-After successfully flashing the firmware, you should see a new Wi-Fi network `WLED-AP`.
+After successfully flashing the firmware, you should see a new Wi-Fi network `WLED-abcdef` with `abcdef` matching the end of the MAC address.
 You may connect to this network using the following password: `wled1234`,
 then you should see a web page "Welcome to WLED!".
 You may press "WIFI SETTINGS" to configure the badge as a Wi-Fi client.
@@ -46,8 +48,8 @@ from source!
 
 ```bash
 git clone https://github.com/wled/WLED
-# checkout v0.15.1, this matchs distributed pre-built binaries
-git checkout v0.15.1
+# checkout v0.15.5, this matchs distributed pre-built binaries
+git checkout v0.15.5
 # copy `platformio_override.ini` to WLED repository
 # this file adds a custom target with our default settings
 cp ../hackropole-badge/firmware-wled/platformio_override.ini ./platformio_override.ini
