@@ -1,0 +1,7 @@
+{
+  "name": "wled-challenge-ws2812b",
+  "build": {
+    "libArchive": false
+  },
+  "dependencies": {}
+}

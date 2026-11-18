@@ -1,0 +1,7 @@
+{
+  "name": "wled-challenge-spi",
+  "build": {
+    "libArchive": false
+  },
+  "dependencies": {}
+}

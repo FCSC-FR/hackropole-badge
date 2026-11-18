@@ -1,0 +1,7 @@
+{
+  "name": "wled-challenge-uart-flag",
+  "build": {
+    "libArchive": false
+  },
+  "dependencies": {}
+}
