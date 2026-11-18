@@ -51,6 +51,11 @@ Pour plus d'inspiration, vous pouvez consulter [la page des usermods WLED](https
 
 ## Assemblage de l'ESP32-S3-Zero et des LED
 
+Ce projet nécessite de réaliser de la soudure en surface,
+ce qui est plus difficile que souder du traversant.
+Si vous ne maîtrisez pas la soudure traversante, veuillez consulter ce petit guide illustré :
+<https://mightyohm.com/files/soldercomic/FullSolderComic_EN.pdf>
+
 Commencez par nettoyer la carte, en particulier les pads sur lesquels vous allez
 souder les composants.
 N'utilisez pas d'eau pour le nettoyage, car elle pourrait être corrosive.

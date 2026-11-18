@@ -47,6 +47,12 @@ For more inspiration, you may take a look at
 
 ## ESP32-S3-Zero and LED assembly
 
+This project requires some surface-mount soldering,
+which is a bit harder than through-hole soldering.
+If you are not already proeficient with through-hole soldering,
+please take a look at this small visual guide:
+<https://mightyohm.com/files/soldercomic/FullSolderComic_EN.pdf>
+
 Starts by cleaning the board, especially the pads on which you are going to
 solder components.
 Don't use water to clean as it might be corrosive, prefer **isopropyl alcool**.
