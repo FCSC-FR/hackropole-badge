@@ -22,10 +22,10 @@ Connectez le câble USB vers l'ESP32-S3 tout en appuyant sur le bouton de boot
 Assurez-vous que votre utilisateur peut écrire dans "/dev/ttyACM0". Ensuite :
 
 ```bash
-esptool.py --port /dev/ttyACM0 erase_flash
-esptool.py --port /dev/ttyACM0 write_flash 0x0 bootloader.bin
-esptool.py --port /dev/ttyACM0 write_flash 0x8000 partitions.bin
-esptool.py --port /dev/ttyACM0 write_flash 0x10000 firmware.bin
+esptool --port /dev/ttyACM0 erase-flash
+esptool --port /dev/ttyACM0 write-flash 0x0 bootloader.bin
+esptool --port /dev/ttyACM0 write-flash 0x8000 partitions.bin
+esptool --port /dev/ttyACM0 write-flash 0x10000 firmware.bin
 ```
 
 Réinitialisez ensuite la carte (par exemple en la débranchant).

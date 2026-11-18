@@ -21,10 +21,10 @@ enter the bootloader mode.
 Make sure you user can write to '/dev/ttyACM0'. Then:
 
 ```bash
-esptool.py --port /dev/ttyACM0 erase_flash
-esptool.py --port /dev/ttyACM0 write_flash 0x0 bootloader.bin
-esptool.py --port /dev/ttyACM0 write_flash 0x8000 partitions.bin
-esptool.py --port /dev/ttyACM0 write_flash 0x10000 firmware.bin
+esptool --port /dev/ttyACM0 erase-flash
+esptool --port /dev/ttyACM0 write-flash 0x0 bootloader.bin
+esptool --port /dev/ttyACM0 write-flash 0x8000 partitions.bin
+esptool --port /dev/ttyACM0 write-flash 0x10000 firmware.bin
 ```
 
 Then reset the board (e.g. by unplugging it).
